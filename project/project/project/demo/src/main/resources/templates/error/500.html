@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout::site-head">
+    <title>Error</title>
+</head>
+<body>
+<header th:replace="layout::site-header"/>
+
+<div class="container">
+	<article class="alert alert-danger">
+		<h1>Error:</h1>
+		<p>Sorry, the required post cannot be found</p>
+	</article>
+	
+</div>
+<footer th:replace="layout::site-footer"/>
+</body>
+</html>

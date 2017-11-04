@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout::site-head">
+    <title>Posts</title>
+</head>
+<body>
+<header th:replace="layout::site-header"/>
+
+<div class="container">
+	<h1>All posts:</h1>
+	<p>Now is <b th:text="${execInfo.now.time}"></b></p>   	
+	
+	<table class="table table-striped">
+		<tr>
+			<th>ID</th>
+		    <th>Title</th>
+		    <th>Body</th>
+		    <th>Author</th>
+		    <th>Date</th>
+			<th colspan="2"></th>
+		</tr>  
+    	<tr th:each = "post : ${posts}">
+    		<td th:text="${post.id}"></td>
+    		<td th:text="${post.title}"> </td>
+    		<td th:text="${post.body}"> </td>
+    		<td th:text="${post.author.username}"> </td>
+    		<td th:text="${#dates.format(post.date,'dd-MM-yyyy')}"> </td>
+
+ 			<td><a th:href="@{/delete/{id}(id=${post.id})}" class="btn btn-danger">Delete</a></td> 
+ 			<td><a href="/edit" th:href="@{/edit/{id}(id=${post.id})}" class="btn btn-info">Edit</a></td>   		
+    	</tr>
+
+     </table>
+</div>
+<footer th:replace="layout::site-footer"/>
+</body>
+</html>

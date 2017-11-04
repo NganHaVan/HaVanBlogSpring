@@ -1,0 +1,65 @@
+.navbar-brand{
+	position: relative;
+	margin-right: 10px;
+}
+.navbar-brand>img{
+	position: absolute;
+	top: 5px;
+}
+
+#messages li{
+	list-style-type:none;
+	display:block;
+	width:80%;
+	text-align:center;
+	margin: 10px auto;
+	padding: 10px;
+}
+/* #messages li.info{ */
+/* 	background-color: #7f7; */
+/* } */
+/* #messages li.error{ */
+/* 	background-color: #d00; */
+/* 	color: white; */
+/* } */
+
+#logged-in-info{
+	padding-top: 7px;
+}
+#logged-in-info form{
+	display: inline-block;
+	margin-right: 10px;
+	margin-left: 6px;
+}
+
+aside{
+	width:350px;
+	background-color: blue;
+	color: white;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top:100px;
+	padding:15px;
+}
+aside a{
+	display: block;
+	margin: 5px 0px;
+	text-decoration: none;
+	color: #fff;
+}
+aside a:HOVER{
+	font-weight: bold;
+	color: #fff;
+}
+.container:AFTER{
+	content: '';
+	display: block;
+	clear: both;
+}
+#latest3{
+	margin-bottom: 50px;
+}
+footer{
+	background-color: #ccc;
+	padding-top: 10px;
+}

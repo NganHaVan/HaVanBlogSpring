@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<div th:replace="layout::site-head" />
+    <title>Havan Blog</title>
+</head>
+<body>
+<div th:replace="layout::site-header"/>
+
+<div class="container">
+	<h1>Welcome to Blog Site</h1>
+	<p>Now is <b th:text="${execInfo.now.time}"></b></p>   	
+	
+	<div class="row">
+	<!-- List latest 5 post -->
+	<aside class="col-md-3">
+		<h2>Recent Posts</h2>
+		<a href="#" th:each="p:${latest5posts}" th:text="${p.title}" th:href="@{/posts/view/{id}/(id=${p.id})}">List</a>
+	</aside>
+	
+	<div id="latest3" class="col-md-8">
+		<article th:each="p: ${latest3posts}" class="well">
+			<h2 class="title" th:text="${p.title}">Post title</h2>
+			<div class="date">
+				<i>Posted on </i><span th:text="${#dates.format(p.date,'dd-MM-yyyy')}">22-10-2017</span>
+				.By <b><span th:text="${p.author.username}">HaVan</span></b>
+			</div>
+			<p class="content" th:utext="${p.body}">Post content</p>
+		</article>
+	</div>
+	</div>
+</div>
+<footer th:replace="layout::site-footer"/>
+</body>
+</html>
